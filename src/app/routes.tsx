@@ -72,7 +72,7 @@ const routes: AppRouteConfig[] = [
     exact: true,
     label: 'Projects',
     path: '/',
-    title: 'PatternFly Seed | Projects Page',
+    title: 'Projects Page',
   },
   {
     component: Contact,
