@@ -9,6 +9,7 @@ module.exports = merge(common('production'), {
   mode: 'production',
   devtool: 'source-map',
   optimization: {
+    sideEffects: true,
     minimizer: [
       new TerserJSPlugin({}),
       new OptimizeCSSAssetsPlugin({})

@@ -11,20 +11,19 @@ import {
   EmptyStateSecondaryActions
 } from '@patternfly/react-core';
 
-export interface ISupportProps {
+export interface IContactProps {
   sampleProp?: string;
 }
 
-const Support: React.FunctionComponent<ISupportProps> = () => (
+const Contact: React.FunctionComponent<IContactProps> = () => (
     <PageSection>
       <EmptyState variant={EmptyStateVariant.full}>
         <EmptyStateIcon icon={CubesIcon} />
-        <Title headingLevel="h1" size="lg">
-          Empty State (Stub Support Module)
+        <Title headingLevel="h1" size="4xl">
+          Empty State (Stub Contact Module)
         </Title>
         <EmptyStateBody>
-          This represents an the empty state pattern in Patternfly 4. Hopefully it&apos;s simple enough to use but flexible
-          enough to meet a variety of needs.
+          Example empty state
         </EmptyStateBody>
         <Button variant="primary">Primary Action</Button>
         <EmptyStateSecondaryActions>
@@ -39,4 +38,4 @@ const Support: React.FunctionComponent<ISupportProps> = () => (
     </PageSection>
   )
 
-export { Support };
+export { Contact };

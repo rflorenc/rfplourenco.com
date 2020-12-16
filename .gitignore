@@ -5,3 +5,5 @@ stats.json
 coverage
 .DS_Store
 .env
+DNC_test.html
+workspace.code-workspace

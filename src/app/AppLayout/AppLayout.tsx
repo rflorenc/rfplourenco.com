@@ -7,11 +7,15 @@ import {
   NavExpandable,
   Page,
   PageHeader,
+  PageHeaderTools,
   PageSidebar,
-  SkipToContent
+  SkipToContent,
+  PageHeaderToolsItem,
+  Button
 } from '@patternfly/react-core';
 import { routes, IAppRoute, IAppRouteGroup } from '@app/routes';
-import logo from '@app/bgimages/Patternfly-Logo.svg';
+import logo from '@app/bgimages/pf-logo-small.svg';
+import { InstagramIcon, LinkedinIcon, GithubIcon } from '@patternfly/react-icons';
 
 interface IAppLayout {
   children: React.ReactNode;
@@ -41,9 +45,50 @@ const AppLayout: React.FunctionComponent<IAppLayout> = ({children}) => {
     );
   }
 
+  const PgHeaderTools = (
+    <PageHeaderTools>
+      <PageHeaderToolsItem>
+        <Button
+          component="a"
+          href="https://github.com/rflorenc"
+          target="_blank"
+          variant="link">
+          <GithubIcon
+            title="My Github"
+            size="md"
+            color="white">
+          </GithubIcon>
+        </Button>
+        <Button
+          component="a"
+          href="https://www.linkedin.com/in/ricardopereira4it/"
+          target="_blank"
+          variant="link">
+          <LinkedinIcon
+            title="LinkedIN"
+            size="md"
+            color="white">
+          </LinkedinIcon>
+        </Button>
+        <Button
+          component="a"
+          href="https://www.instagram.com/rflorenc/"
+          target="_blank"
+          variant="link">
+          <InstagramIcon
+            title="Instagram"
+            size="md"
+            color="white">
+          </InstagramIcon>
+        </Button>
+      </PageHeaderToolsItem>
+    </PageHeaderTools>
+  );
+
   const Header = (
     <PageHeader
       logo={<LogoImg />}
+      headerTools={PgHeaderTools}
       showNavToggle
       isNavOpen={isNavOpen}
       onNavToggle={isMobileView ? onNavToggleMobile : onNavToggle}

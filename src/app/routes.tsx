@@ -3,18 +3,19 @@ import { Route, RouteComponentProps, Switch } from 'react-router-dom';
 import { Alert, PageSection } from '@patternfly/react-core';
 import { DynamicImport } from '@app/DynamicImport';
 import { accessibleRouteChangeHandler } from '@app/utils/utils';
+import { About } from '@app/About/About';
 import { Projects } from '@app/Projects/Projects';
-import { GeneralSettings } from '@app/Settings/General/GeneralSettings';
-import { ProfileSettings } from '@app/Settings/Profile/ProfileSettings';
+import { BlogPost1 } from '@app/Blog/BlogPost1/BlogPost1';
+import { BlogPost2 } from '@app/Blog/BlogPost2/BlogPost2';
 import { NotFound } from '@app/NotFound/NotFound';
 import { useDocumentTitle } from '@app/utils/useDocumentTitle';
 import { LastLocationProvider, useLastLocation } from 'react-router-last-location';
 
 let routeFocusTimer: number;
 
-const getSupportModuleAsync = () => () => import(/* webpackChunkName: 'support' */ '@app/Support/Support');
+const getSupportModuleAsync = () => () => import(/* webpackChunkName: 'contact' */ '@app/Contact/Contact');
 
-const Support = (routeProps: RouteComponentProps): React.ReactElement => {
+const Contact = (routeProps: RouteComponentProps): React.ReactElement => {
   const lastNavigation = useLastLocation();
   return (
     /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -31,7 +32,7 @@ const Support = (routeProps: RouteComponentProps): React.ReactElement => {
             </PageSection>
           );
         } else {
-          loadedComponent = <Component.Support {...routeProps} />;
+          loadedComponent = <Component.Contact {...routeProps} />;
         }
         return loadedComponent;
       }}
@@ -60,6 +61,13 @@ export type AppRouteConfig = IAppRoute | IAppRouteGroup;
 
 const routes: AppRouteConfig[] = [
   {
+    component: About,
+    exact: true,
+    label: 'About',
+    path: '/about',
+    title: 'About Page'
+  },
+  {
     component: Projects,
     exact: true,
     label: 'Projects',
@@ -67,29 +75,29 @@ const routes: AppRouteConfig[] = [
     title: 'PatternFly Seed | Projects Page',
   },
   {
-    component: Support,
+    component: Contact,
     exact: true,
     isAsync: true,
-    label: 'Support',
-    path: '/support',
-    title: 'PatternFly Seed | Support Page',
+    label: 'Contact',
+    path: '/contact',
+    title: 'Contact Page',
   },
   {
-    label: 'Settings',
+    label: 'Blog',
     routes: [
       {
-        component: GeneralSettings,
+        component: BlogPost1,
         exact: true,
-        label: 'General',
-        path: '/settings/general',
-        title: 'PatternFly Seed | General Settings',
+        label: 'Post 1',
+        path: '/blog/post1',
+        title: 'Blog post 1 title',
       },
       {
-        component: ProfileSettings,
+        component: BlogPost2,
         exact: true,
-        label: 'Profile',
-        path: '/settings/profile',
-        title: 'PatternFly Seed | Profile Settings',
+        label: 'Post 2',
+        path: '/blog/post2',
+        title: 'Blog post 2 title',
       },
     ],
   },
