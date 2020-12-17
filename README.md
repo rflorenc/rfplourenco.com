@@ -1,4 +1,6 @@
-# Source code for personal web site
+# Personal web site source code
+
+Built with Typescript and React, based on [PatternFly](https://www.patternfly.org/v4/), an open source web UI framework by Red Hat.
 
 
 ## Quick-start
@@ -46,5 +48,5 @@ npm run build
 # Start the express server (run a production build first)
 npm run start
 
-# Copy static content to web server Root
+# Copy static content to web server root
 ```

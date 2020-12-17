@@ -5,11 +5,14 @@ import { DynamicImport } from '@app/DynamicImport';
 import { accessibleRouteChangeHandler } from '@app/utils/utils';
 import { About } from '@app/About/About';
 import { Projects } from '@app/Projects/Projects';
-import { BlogPost1 } from '@app/Blog/BlogPost1/BlogPost1';
-import { BlogPost2 } from '@app/Blog/BlogPost2/BlogPost2';
+
 import { NotFound } from '@app/NotFound/NotFound';
 import { useDocumentTitle } from '@app/utils/useDocumentTitle';
 import { LastLocationProvider, useLastLocation } from 'react-router-last-location';
+
+// Blog post imports
+import { BP1 } from '@app/Blog/BP1/BP1';
+import { BP2 } from '@app/Blog/BP2/BP2';
 
 let routeFocusTimer: number;
 
@@ -64,14 +67,14 @@ const routes: AppRouteConfig[] = [
     component: About,
     exact: true,
     label: 'About',
-    path: '/about',
+    path: '/',
     title: 'About Page'
   },
   {
     component: Projects,
     exact: true,
     label: 'Projects',
-    path: '/',
+    path: '/projects',
     title: 'Projects Page',
   },
   {
@@ -86,18 +89,18 @@ const routes: AppRouteConfig[] = [
     label: 'Blog',
     routes: [
       {
-        component: BlogPost1,
+        component: BP1,
         exact: true,
-        label: 'Post 1',
-        path: '/blog/post1',
-        title: 'Blog post 1 title',
+        label: 'BP1',
+        path: '/blog/bp1',
+        title: 'BP1',
       },
       {
-        component: BlogPost2,
+        component: BP2,
         exact: true,
-        label: 'Post 2',
-        path: '/blog/post2',
-        title: 'Blog post 2 title',
+        label: 'BP2',
+        path: '/blog/bp2',
+        title: 'BP2',
       },
     ],
   },

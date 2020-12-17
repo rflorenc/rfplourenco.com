@@ -8,6 +8,10 @@ import {
   Page,
   PageHeader,
   PageHeaderTools,
+  PageSection,
+  Grid,
+  GridItem,
+  Text,
   PageSidebar,
   SkipToContent,
   PageHeaderToolsItem,
@@ -136,6 +140,7 @@ const AppLayout: React.FunctionComponent<IAppLayout> = ({children}) => {
       Skip to Content
     </SkipToContent>
   );
+
   return (
     <Page
       mainContainerId="primary-app-container"
