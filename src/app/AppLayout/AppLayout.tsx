@@ -8,17 +8,13 @@ import {
   Page,
   PageHeader,
   PageHeaderTools,
-  PageSection,
-  Grid,
-  GridItem,
-  Text,
   PageSidebar,
   SkipToContent,
   PageHeaderToolsItem,
   Button
 } from '@patternfly/react-core';
 import { routes, IAppRoute, IAppRouteGroup } from '@app/routes';
-import logo from '@app/bgimages/pf-logo-small.svg';
+import logo from '@app/images/pf-logo-small.svg';
 import { InstagramIcon, LinkedinIcon, GithubIcon } from '@patternfly/react-icons';
 
 interface IAppLayout {
@@ -129,12 +125,14 @@ const AppLayout: React.FunctionComponent<IAppLayout> = ({children}) => {
       </NavList>
     </Nav>
   );
+
   const Sidebar = (
     <PageSidebar
       theme="light"
       nav={Navigation}
       isNavOpen={isMobileView ? isNavOpenMobile : isNavOpen} />
   );
+
   const PageSkipToContent = (
     <SkipToContent href="#primary-app-container">
       Skip to Content
